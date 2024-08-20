@@ -19,7 +19,7 @@ class Server:
     """server class to paginate a database of baby names.
     """
 
-    DATA_FILE = "popular_Baby_Names.csv"
+    DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
         self.__dataset = None
