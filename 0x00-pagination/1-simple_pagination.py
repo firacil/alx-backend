@@ -26,7 +26,7 @@ class Server:
 
     def dataset(self) -> List[List]:
         """cache dataset"""
-        if seld.__dataset is None:
+        if self.__dataset is None:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
                 dataset = [row for ro in reader]
