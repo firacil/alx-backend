@@ -28,17 +28,13 @@ class FIFOCache(BaseCaching):
         if key is None or item is None:
             pass
 
-        # if the key already exists, update it and move it to end
-        if key in self.cache_data:
-            self.cache_data.pop(key)
-
         # adding the key-value pair to cache
         self.cache_data[key] = item
 
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
             first_key = next(iter(self.cache_data))
+            del self.cache_data[first_key]
             print(f"DISCARD: {first_key}")
-            self.cache_data.pop(first_key)
 
     def get(self, key):
         """
