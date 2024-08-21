@@ -29,7 +29,7 @@ class FIFOCache(BaseCaching):
             pass
         else:
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-                first_key = next(iter(self.cache_data))
+                first_key = next(iter(self.cache_data.keys()))
                 del self.cache_data[first_key]
                 print(f"DISCARD: {first_key}")
 
