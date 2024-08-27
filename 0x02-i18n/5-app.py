@@ -27,7 +27,7 @@ users = {
 }
 
 
-def get_user():
+def get_user() -> str:
     """returns a user dictionary or none if the id can't found
     """
     login_id = request.args.get('login_as')
@@ -59,7 +59,7 @@ def get_locale() -> str:
 @app.route('/')
 def home() -> str:
     """return babel object locale"""
-    return render_template('4-index.html')
+    return render_template('5-index.html')
 
 
 if __name__ == '__main__':
