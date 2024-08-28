@@ -27,7 +27,7 @@ users = {
 }
 
 
-def get_user() -> str:
+def get_user():
     """returns a user dictionary or none if the id can't found
     """
     login_id = request.args.get('login_as')
