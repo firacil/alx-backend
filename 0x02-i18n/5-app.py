@@ -44,7 +44,7 @@ def before_request() -> None:
 
 
 @babel.localeselector
-def get_locale() -> str:
+def get_locale():
     """return the bestmatch clients preferred langs
     and supported one
     """
@@ -57,10 +57,10 @@ def get_locale() -> str:
 
 
 @app.route('/')
-def home() -> str:
+def home():
     """return babel object locale"""
     return render_template('5-index.html')
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port="5000", host="0.0.0.0", debug=True)
