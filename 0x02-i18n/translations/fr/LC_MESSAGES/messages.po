@@ -21,7 +21,7 @@ msgstr ""
 #: templates/3-index.html:5 templates/4-index.html:5 templates/5-index.html:5
 #: templates/6-index.html:5
 msgid "home_title"
-msgstr "Bienvenue chez Holberton"
+msgstr ""
 
 #: templates/3-index.html:8 templates/4-index.html:8 templates/5-index.html:8
 #: templates/6-index.html:8
