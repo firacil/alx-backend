@@ -51,6 +51,7 @@ def get_locale():
     # locale from url parameters
     locale = request.args.get('locale')
     if locale in app.config['LANGUAGES']:
+        print(locale)
         return locale
 
     # locale from user settings
@@ -67,10 +68,35 @@ def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
+@babel.timezoneselector
+def get_timezone():
+    """select and return tz"""
+
+    # find tz parameter in url param
+    tzone = request.args.get('timezone', None)
+    if tzone:
+        try:
+            return timezoe(tzone).zone
+        except pytz.exceptions.UnknownTimeZoneError:
+            pass
+
+    # find time zone from user settings
+    if g.user:
+        try:
+            tzoe = g.user.get('timezone')
+            return timezone(tzone).zone
+        except pytz.exceptions.UnknownTimeZoneError:
+            pass
+
+    # default utc
+    default_tz = app.config['BABEL_DEFAULT_TIMEZONE']
+    return default_tz
+
+
 @app.route('/')
 def home():
     """return babel object locale"""
-    return render_template('6-index.html')
+    return render_template('7-index.html')
 
 
 if __name__ == '__main__':
